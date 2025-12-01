@@ -12,7 +12,7 @@ const Abonnement = () => {
     {
       id: "free",
       name: "Gratuit",
-      price: "0 FCFA",
+      price: "0 KMF",
       current: false,
       features: [
         "Consulter les pharmacies de garde",
@@ -23,7 +23,7 @@ const Abonnement = () => {
     {
       id: "mensuel",
       name: "Mensuel Premium",
-      price: "500 FCFA / mois",
+      price: "500 KMF / mois",
       badge: "Actuel",
       current: true,
       expires: "Expire le: 28/12/2025",
