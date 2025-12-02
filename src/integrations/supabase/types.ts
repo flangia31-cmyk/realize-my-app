@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      pharmacies: {
+        Row: {
+          address: string
+          created_at: string
+          has_parking: boolean | null
+          id: string
+          is_on_call: boolean | null
+          is_pmr: boolean | null
+          latitude: number | null
+          longitude: number | null
+          name: string
+          opening_hours: Json | null
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          address: string
+          created_at?: string
+          has_parking?: boolean | null
+          id?: string
+          is_on_call?: boolean | null
+          is_pmr?: boolean | null
+          latitude?: number | null
+          longitude?: number | null
+          name: string
+          opening_hours?: Json | null
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          has_parking?: boolean | null
+          id?: string
+          is_on_call?: boolean | null
+          is_pmr?: boolean | null
+          latitude?: number | null
+          longitude?: number | null
+          name?: string
+          opening_hours?: Json | null
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
