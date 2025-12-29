@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowLeft, Heart, MapPin, Phone, Clock, ParkingCircle, Accessibility, Star, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -19,13 +19,15 @@ const PharmacyDetail = () => {
 
   const { data: pharmacy, isLoading, error } = usePharmacy(id || "");
 
-  if (error) {
-    toast({
-      title: "Erreur",
-      description: "Impossible de charger les détails de la pharmacie",
-      variant: "destructive",
-    });
-  }
+  useEffect(() => {
+    if (error) {
+      toast({
+        title: "Erreur",
+        description: "Impossible de charger les détails de la pharmacie",
+        variant: "destructive",
+      });
+    }
+  }, [error, toast]);
 
   const formatOpeningHours = (hours: any) => {
     if (!hours || typeof hours !== 'object') return null;
